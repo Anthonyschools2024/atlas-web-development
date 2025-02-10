@@ -1,0 +1,371 @@
+/* ================================================
+   GLOBAL RESETS & FONTS
+   ================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #071629; /* fallback color */
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+/* ================================================
+   FIRST SECTION (HEADER + HERO)
+   ================================================ */
+.main-container {
+  position: relative;
+  width: 1440px;
+  height: 1093px;
+  margin: 0 auto;
+
+  /* 
+    Combined hero background + radial gradient 
+    as previously integrated.
+  */
+  background: 
+    radial-gradient(
+      85.9% 85.9% at 50% 14.1%, 
+      rgba(41,48,61,0.0001) 0%, 
+      #071629 100%
+    ),
+    url('images/pic_1.jpg') no-repeat center;
+  background-size: cover;
+}
+
+/* Header container 
+   top=35.02px, left=171.59px, w=1103.41px, h=29.46px 
+*/
+.header {
+  position: absolute;
+  top: 35.02px;
+  left: 171.59px;
+  width: 1103.41px;
+  height: 29.46px;
+  opacity: 1;
+}
+
+/* The new .logo area for the smile-school-logo.png */
+.logo {
+  position: relative;
+  width: 168px;  /* if exact or approximate */
+  height: 30px;  /* from the image dimension (30×168) */
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+}
+
+/* Menu navigation: top=37, left=1041, w=234, h=15 */
+.menu {
+  position: absolute;
+  top: 37px;
+  left: 1041px;
+  width: 234px;
+  height: 15px;
+  opacity: 1;
+}
+.menu a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+/* Hero title (\"GET SCHOOLED\") */
+.hero-title {
+  position: absolute;
+  top: 220px;
+  left: 377px;
+  width: 684px;
+  height: 151px;
+  font-size: 120px;
+  font-weight: 700;
+  line-height: 150.84px;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+}
+
+/* SMILES / GRIN / LAUGH text */
+.smiles {
+  position: absolute;
+  top: 361px;
+  left: 593px;
+  width: 52px;
+  height: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20.11px;
+  color: #ffffff;
+}
+.grin {
+  position: absolute;
+  top: 361px;
+  left: 704px;
+  width: 36px;
+  height: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20.11px;
+  color: #ffffff;
+}
+.laugh {
+  position: absolute;
+  top: 361px;
+  left: 797px;
+  width: 49px;
+  height: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20.11px;
+  color: #ffffff;
+}
+
+/* Register button */
+.register-btn {
+  position: absolute;
+  top: 419px;
+  left: 639px;
+  width: 162px;
+  height: 44px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #ff00dc;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 2px 20px 0px #00000080;
+}
+
+/* Learn from the pros */
+.learn-pros {
+  position: absolute;
+  top: 631px;
+  left: 604px;
+  width: 261px;
+  height: 40px;
+  font-size: 32px;
+  line-height: 40.22px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  margin: 0;
+}
+.learn-pros span {
+  font-weight: 300;
+}
+
+/* The pros section with 4 images */
+.pros-section {
+  position: absolute;
+  top: 758px;
+  left: 217px;
+  width: 1009px;
+  height: 237px;
+}
+.pro-1, .pro-2, .pro-3, .pro-4 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  /* Example layout - adjust top/left as needed */
+}
+.pro-1 { top: 50px; left: 0px; }
+.pro-2 { top: 50px; left: 220px; }
+.pro-3 { top: 50px; left: 440px; }
+.pro-4 { top: 50px; left: 660px; }
+
+.pro-1 img,
+.pro-2 img,
+.pro-3 img,
+.pro-4 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; 
+}
+
+/* ================================================
+   SECOND SECTION
+   ================================================ */
+.part-1-testimonials {
+  position: absolute;
+  top: 1093px;
+  left: -1px;
+  width: 1440px;
+  height: 392px;
+  opacity: 1;
+}
+
+.testimonial-photo {
+  position: absolute;
+  top: 100px;
+  left: 600px;
+  width: 100px;
+  height: 100px;
+}
+.testimonial-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; 
+}
+
+/* Tutorials container */
+.part-2-tutorials {
+  position: absolute;
+  top: 1572px;
+  left: 106px;
+  width: 1228px;
+  height: 450px;
+  opacity: 1;
+}
+
+/* Dot containers for tutorial images */
+.dot-1, .dot-2, .dot-3, .dot-4 {
+  position: absolute;
+  top: 168px;
+  width: 257px;
+  height: 153px;
+  opacity: 1;
+}
+.dot-1 { left: 164px; }
+.dot-2 { left: 448px; }
+.dot-3 { left: 733px; }
+.dot-4 { left: 1019px; }
+
+.dot-1 img,
+.dot-2 img,
+.dot-3 img,
+.dot-4 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Star rating container & icons */
+.rating-stars {
+  position: absolute;
+  top: 340px;
+  left: 450px;
+  width: 200px;
+  height: 30px;
+}
+.rating-stars img {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+/* Purple play button */
+.play-button-container {
+  position: absolute;
+  top: 260px; /* example coordinate - adjust to your design specs */
+  left: 500px;
+  width: 50px;
+  height: 50px;
+}
+.play-button-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+}
+
+/* Part 3: Free Membership */
+.part-3-free-membership {
+  position: absolute;
+  top: 2109px;
+  left: 0;
+  width: 1440px;
+  height: 502px;
+  opacity: 1;
+  background-color: #071629;
+}
+
+.free-membership-title {
+  position: absolute;
+  top: 70px;
+  left: 617px;
+  width: 234px;
+  height: 40px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40.22px;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+}
+.free-membership-title span {
+  font-weight: 700;
+}
+
+.membership-btn {
+  position: absolute;
+  top: 406px;
+  left: 639px;
+  width: 162px;
+  height: 44px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #ff00dc;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 2px 20px 0px #00000080;
+}
+
+/* Purple smiley icon */
+.purple-smile-icon {
+  position: absolute;
+  top: 200px;
+  left: 670px;
+  width: 70px;
+  height: 90px;
+}
+.purple-smile-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Part 4: FAQ */
+.part-4-faq {
+  position: absolute;
+  top: 2678px;
+  left: 249px;
+  width: 920px;
+  height: 707px;
+  opacity: 1;
+}
+
+/* Part 5: Footer */
+.part-5-footer {
+  position: absolute;
+  top: 3469px;
+  left: 0;
+  width: 1440px;
+  height: 249px;
+  opacity: 1;
+}
+
+/* Footer icons (social or otherwise) */
+.footer-icons {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 100px;
+  height: 30px;
+  display: flex;
+  gap: 10px;
+}
+.footer-icons img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
