@@ -1,369 +1,600 @@
-l/* ================================================
-   GLOBAL RESETS & FONTS
-   ================================================ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ==================== GLOBAL BACKGROUND & FONT DEFINITIONS ==================== */
+#bgr {
+  background: radial-gradient(85.9% 85.9% at 50% 14.1%, rgba(41,48,61,0) 0%, #071629 100%), #000;
+  background: #000 url("./images/hnbbgr.jpeg") no-repeat;
+  background-blend-mode: normal, color;
+  background-size: 1500px 1150px;
+  z-index: -1;
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
-  font-family: "Source Sans Pro", sans-serif;
+/* Pre-existing fonts */
+@font-face {
+  font-family: thinFont;
+  src: url("fonts/thinFont.otf");
 }
 
-/* ================================================
-   FIRST SECTION (HEADER + HERO)
-   ================================================ */
-.main-container {
-  position: relative;
-  width: 1440px;
-  height: 1093px;
-  margin: 0 auto;  /* horizontally center the hero container */
-
-  background:
-    radial-gradient(
-      85.9% 85.9% at 50% 14.1%,
-      rgba(7,22,41,0.3) 0%,
-      rgba(7,22,41,1) 100%
-    ),
-    url("images/pic_1.jpg") no-repeat center;
-  background-size: cover;
+@font-face {
+  font-family: lightFont;
+  src: url("fonts/lightFont.otf");
 }
 
-/* Header container */
-.header {
+@font-face {
+  font-family: extraLightFont;
+  src: url("fonts/extraLightFont.otf");
+}
+
+/* --- NEW: Source Sans Pro Font Implementation --- */
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("fonts/SourceSansPro-Regular.woff2") format("woff2"),
+       url("fonts/SourceSansPro-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin-block-start: 0;
+}
+
+/* ============================== HEADER & NAVIGATION ============================== */
+header {
   position: absolute;
-  top: 35.02px;
-  left: 171.59px;
-  width: 1103.41px;
-  height: 29.46px;
-  opacity: 1;
-}
-
-/* Logo area */
-.logo {
-  position: relative;
-  width: 168px;
-  height: 30px;
-}
-.logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-/* Menu navigation */
-.menu {
-  position: absolute;
-  top: 37px;
-  left: 1041px;
-  width: 234px;
-  height: 15px;
-  opacity: 1;
-}
-.menu a {
-  color: #fff;
-  font-weight: 700;
-  text-decoration: none;
-  margin-left: 10px;
-}
-
-/* Hero title ("GET SCHOOLED") */
-.hero-title {
-  position: absolute;
-  top: 220px;
-  left: 377px;
-  width: 684px;
-  height: 151px;
-  font-size: 120px;
-  font-weight: 700;
-  line-height: 150.84px;
-  color: #ffffff;
-  text-align: center;
-  margin: 0;
-}
-
-/* SMILES / GRIN / LAUGH text */
-.smiles, .grin, .laugh {
-  position: absolute;
-  top: 361px;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 20.11px;
-  color: #ffffff;
-}
-.smiles { left: 593px; width: 52px; }
-.grin   { left: 704px; width: 36px; }
-.laugh  { left: 797px; width: 49px; }
-
-/* Register button */
-.register-btn {
-  position: absolute;
-  top: 419px;
-  left: 639px;
-  width: 162px;
-  height: 44px;
-  font-size: 16px;
-  font-weight: 700;
-  color: #fff;
-  background-color: #ff00dc;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0px 2px 20px 0px #00000080;
-}
-
-/* Learn from the pros */
-.learn-pros {
-  position: absolute;
-  top: 631px;
-  left: 604px;
-  width: 261px;
-  height: 40px;
-  font-size: 32px;
-  line-height: 40.22px;
-  font-weight: 700;
-  text-align: center;
-  color: #ffffff;
-  margin: 0;
-}
-.learn-pros span {
-  font-weight: 300;
-}
-
-/* ================================================
-   PROS SECTION (EXACT SPECS)
-   ================================================ */
-.pros-section {
-  position: absolute;
-  /* EXACT measurements from your specs */
-  width: 1009px;
-  height: 237px;
-  top: 758px;
-  left: 217px;
-}
-
-/* The four pro images: each 150×150, exactly as in the zip file. */
-.pro-1, .pro-2, .pro-3, .pro-4 {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  top: 50px; /* from Figma? */
-}
-
-/* Original left offsets from your assignment:
-   ~ 0px, 220px, 440px, 660px to space them out */
-.pro-1 { left: 0px;   }
-.pro-2 { left: 220px; }
-.pro-3 { left: 440px; }
-.pro-4 { left: 660px; }
-
-.pro-1 img,
-.pro-2 img,
-.pro-3 img,
-.pro-4 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-/* Example usage in HTML (if you haven't set them yet):
-   <div class="pros-section">
-     <div class="pro-1"><img src="images/pro1.jpg" alt="Phillip Massey"></div>
-     <div class="pro-2"><img src="images/pro2.jpg" alt="Nannie Lawrence"></div>
-     <div class="pro-3"><img src="images/pro3.jpg" alt="Bruce Walters"></div>
-     <div class="pro-4"><img src="images/pro4.jpg" alt="Henry Hughes"></div>
-   </div>
-*/
-
-/* ================================================
-   SECOND SECTION: TESTIMONIALS (Centered)
-   ================================================ */
-.part-1-testimonials {
-  position: absolute;
-  top: 1093px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1440px;
-  height: 392px;
-  background-color: #b946f8; 
-  color: #fff;
-}
-
-.testimonial-photo {
-  position: absolute;
-  top: 100px;
-  left: 600px;
-  width: 100px;
-  height: 100px;
-}
-.testimonial-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-/* ================================================
-   THIRD SECTION: TUTORIALS (White BG, Centered)
-   ================================================ */
-.part-2-tutorials {
-  position: absolute;
-  top: 1572px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1440px;
-  height: auto;
-  background-color: #ffffff;
-  color: #071629;
-}
-
-/* Example placeholders for your tutorial cards */
-.dot-1, .dot-2, .dot-3, .dot-4 {
-  position: absolute;
-  top: 168px;
-  width: 257px;
-  height: 153px;
-}
-.dot-1 { left: 164px; }
-.dot-2 { left: 448px; }
-.dot-3 { left: 733px; }
-.dot-4 { left: 1019px; }
-
-.dot-1 img,
-.dot-2 img,
-.dot-3 img,
-.dot-4 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-.rating-stars {
-  position: absolute;
-  top: 340px;
-  left: 450px;
-  width: 200px;
-  height: 30px;
-}
-.rating-stars img {
-  width: 30px;
-  height: 30px;
-  margin-right: 5px;
-}
-
-.play-button-container {
-  position: absolute;
-  top: 260px;
-  left: 500px;
-  width: 50px;
-  height: 50px;
-}
-.play-button-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-/* ================================================
-   FOURTH SECTION: FREE MEMBERSHIP (Centered)
-   ================================================ */
-.part-3-free-membership {
-  position: absolute;
-  top: 2109px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1440px;
-  height: 502px;
-  background-color: #071629;
-  color: #ffffff;
-}
-
-.free-membership-title {
-  position: absolute;
-  top: 70px;
-  left: 617px;
-  width: 234px;
-  height: 40px;
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 40.22px;
-  text-align: center;
-  color: #ffffff;
-  margin: 0;
-}
-
-.membership-btn {
-  position: absolute;
-  top: 406px;
-  left: 639px;
-  width: 162px;
-  height: 44px;
-  font-size: 16px;
-  font-weight: 700;
-  color: #fff;
-  background-color: #ff00dc;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0px 2px 20px 0px #00000080;
-}
-
-/* Purple smiley icon */
-.purple-smile-icon {
-  position: absolute;
-  top: 200px;
-  left: 670px;
-  width: 70px;
-  height: 90px;
-}
-.purple-smile-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-/* ================================================
-   FIFTH SECTION: FAQ (White BG, Centered)
-   ================================================ */
-.part-4-faq {
-  position: absolute;
-  top: 2678px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1440px;
-  height: auto;
-  background-color: #ffffff;
-  color: #071629;
-}
-
-/* ================================================
-   SIXTH SECTION: FOOTER (Dark BG, Centered)
-   ================================================ */
-.part-5-footer {
-  position: absolute;
-  top: 3469px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1440px;
-  height: 249px;
-  background-color: #071629;
-  color: #ffffff;
-}
-
-.footer-icons {
-  position: absolute;
-  top: 50px;
-  left: 50px;
-  width: 100px;
+  top: 40px;
+  width: 75%;
   height: 30px;
   display: flex;
-  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
-.footer-icons img {
+
+#hdr {
+  width: 100%;
+  height: 29.46px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#logo {
+  width: 167.016px;
+  height: 29.461px;
+  flex-shrink: 0;
+  top: 130px;
+  margin-left: 130px;
+}
+
+#links {
+  display: inline-flex;
+  gap: 30px;
+  height: 15px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 50px;
+}
+
+#links a {
+  color: #FFF;
+  font-family: thinFont;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+}
+
+/* ============================ TYPOGRAPHY & BUTTONS ============================ */
+h1 {
+  color: #FFF;
+  font-family: thinFont;
+  text-align: center;
+  font-size: 120px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  align-items: center;
+  margin-top: 220px;
+  margin-bottom: 0;
+}
+
+p {
+  color: #FFF;
+  text-align: center;
+  font-family: thinFont;
+  font-style: normal;
+  line-height: normal;
+  word-spacing: 50px;
+}
+
+button {
+  color: #FFF;
+  background: #C271FF;
+  border-radius: 22px;
+  width: 162px;
+  height: 44px;
+  flex-shrink: 0;
+  font-family: thinFont;
+}
+
+/* ============================== BANNER SECTION ============================== */
+.banner {
+  color: #FFF;
+  text-align: center;
+  width: 100%;
+  height: 874px;
+}
+
+span {
+  color: #C271FF;
+  font-weight: 700;
+  font-family: thinFont;
+}
+
+h2 {
+  color: #FFF;
+  text-align: center;
+  font-family: extraLightFont;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin-top: 150px;
+  margin-bottom: 70px;
+}
+
+/* ============================== PEOPLE SECTION ============================== */
+#people {
+  display: inline-flex;
+  width: 1100px;
+  height: 150px;
+  dispay: flex;  /* (Note: original typo maintained) */
+  flex-shrink: 0;
+  justify-content: space-around;
+}
+
+.person {
+  width: 150px;
+  height: 230px;
+  flex-shrink: 0;
+  color: #FFF;
+  text-align: center;
+  /* Previously commented out – now implemented: */
+  font-family: "Source Sans Pro";
+}
+
+.person img {
+  height: 150px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.person h3 {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 27px; /* 150% */
+  font-family: thinFont;
+  margin-bottom: 5px;
+}
+
+.person p {
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  white-space: nowrap;
+  word-spacing: -1px;
+  font-family: extraLightFont;
+  margin: 0;
+}
+
+/* ============================ QUOTE (MAIN PART) SECTION ============================ */
+/*
+  The background of the main part uses layered backgrounds so that:
+    - The bottom (mask) layer covers 1440x1093 at (0,0) with #071629.
+    - The object layer uses pic_1.jpg at 1448.15x1055 with offset (-4.08px, -66px).
+    - The top bitmap overlay uses a radial gradient.
+  All layers are applied via the multiple background property, and they sit behind the content.
+*/
+.quote {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #C271FF;
+  background-image: 
+    radial-gradient(85.9% 85.9% at 50% 14.1%, rgba(41,48,61,0.0001) 0%, #071629 100%), /* Bitmap overlay */
+    url("./images/pic_1.jpg"),                                                               /* Object layer (overlay image) */
+    #071629;                                                                                 /* Mask layer */
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: 1440px 1093px, 1448.15px 1055px, 100% 100%;
+  background-position: 0 0, -4.08px -66px, 0 0;
+}
+
+#quote-div {
+  width: 85%;
+  height: 160px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.quote blockquote {
+  color: #FFF;
+  width: 730px;
+  height: 100px;
+  font-family: lightFont;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 33.6px;
+  word-spacing: -1px;
+  margin: 0;
+}
+
+.quote p {
+  color: #FFF;
+  width: 730px;
+  height: 20px;
+  font-family: thinFont;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 33.6px;
+  text-align: left;
+  margin-top: 0;
+  word-spacing: -1px;
+}
+
+.bold {
+  font-family: thinFont;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.italic {
+  font-family: extraLightFont;
+  text-align: left;
+  font-style: italic;
+  word-spacing: -1px;
+}
+
+/* ============================== VIDEOS SECTION ============================== */
+.videos {
+  background-color: #FFF;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+}
+
+.videos h1 {
+  color: #071629;
+  text-align: center;
+  font-family: thinFont;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  padding: 0 0 50px 0;
+  margin: 0;
+}
+
+#videos-div {
+  width: 1100px;
+  height: 335px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  justify-content: space-between;
+}
+
+.video-div {
+  width: 255px;
+  height: 335px;
+  flex-shrink: 0;
+  flex-direction: column;
+  border-radius: 5px;
+  background: #FFF;
+  box-shadow: 0 2px 4px rgba(7,22,41,0.18);
+  z-index: 1;
+}
+
+/* ========================== VIDEO PLAY BUTTONS ========================== */
+#play-btn1,
+#play-btn2,
+#play-btn3,
+#play-btn4 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 255px;
+  height: 154px;
+  flex-shrink: 0;
+  border-radius: 5px 5px 0 0;
+  background: #D8D8D8;
+  z-index: 2;
+}
+
+#play-btn1 {
+  background: url('./images/tutor1.png') no-repeat;
+}
+#play-btn2 {
+  background: url('./images/tutor2.png') center/cover no-repeat;
+}
+#play-btn3 {
+  background: url('./images/tutor3.png') center/cover no-repeat;
+}
+#play-btn4 {
+  background: url('./images/tutor4.png') center/cover no-repeat;
+}
+
+/* ======================= VIDEO TEXT & AUTHOR DETAILS ======================= */
+.video-div h2 {
+  color: #071629;
+  font-family: thinFont;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  width: 106px;
+  height: 20px;
+  margin: 5px 0 5px 10px;
+}
+
+.video-div p {
+  color: rgba(7,22,41,0.50);
+  font-family: thinFont;
+  font-size: 14px;
+  font-styple: normal;
+  font-weight: 400;
+  line-height: 24px;
+  padding-left: 10px;
+  margin: 0 10px;
+  text-align: left;
+  word-spacing: -1px;
+}
+
+#smallImage {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 0;
+}
+
+#smallImage img {
   width: 30px;
   height: 30px;
-  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 50%;
+  margin: 10px 10px 10px 0;
+}
+
+#smallImage h3 {
+  color: #C271FF;
+  font-family: thinFont;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 27px;
+}
+
+/* ============================== RATING BLOCK ============================== */
+.rating {
+  display: flex;
+  justify-content: space-around;
+}
+
+.rating img {
+  width: 107px;
+  height: 14px;
+  flex-shrink: 0;
+  padding: 10px 10px 10px 0;
+}
+
+.rating p {
+  color: #C271FF;
+  text-align: right;
+  font-family: lightFont;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 27px;
+}
+
+/* ============================ MEMBERSHIP SECTION ============================ */
+.member {
+  display: flex;
+  background-color: #071629;
+  font-family: thinFont;
+  width: 100%;
+  height: 502px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.member h1 {
+  color: #FFF;
+  font-family: thinFont;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin-top: 80px;
+  margin-bottom: 0;
+}
+
+.member div {
+  display: flex;
+}
+
+.membership {
+  display: flex;
+  width: 257px;
+  height: 153px;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: thinFont;
+}
+
+.membership img {
+  width: 43.67px;
+  height: 35.35px;
+  flex-shrink: 0;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.membership h2 {
+  width: 257px;
+  color: #FFF;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-family: thinFont;
+}
+
+.membership p {
+  color: #FFF;
+  width: 220px;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  word-spacing: -1px;
+  margin-left: 5px;
+  margin-bottom: 0;
+  font-family: lightFont;
+}
+
+button {
+  margin-top: 0;
+  margin-bottom: 60px;
+}
+
+/* ============================== FAQ SECTION ============================== */
+#faq {
+  display: flex;
+  background-color: #FFF;
+  width: 100%;
+  height: 800px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#faq-cont {
+  width: 920px;
+  height: 100%;
+  flex-shrink: 0;
+  margin-top: 0;
+}
+
+#faq h1 {
+  color: #071629;
+  text-align: center;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin-top: 80px;
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+.faq-qna {
+  font-family: thinFont;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.block {
+  display: flex;
+  width: 350px;
+  height: 260px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.block h2 {
+  color: #071629;
+  font-size: 16px;
+  font-family: thinFont;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+
+.block p {
+  color: rgba(7,22,41,0.50);
+  width: 330px;
+  font-size: 14px;
+  font-family: thinFont;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
+  word-spacing: -1px;
+  margin-top: 0;
+  z-index: 2;
+}
+
+/* ============================== FOOTER SECTION ============================== */
+footer {
+  width: 100%;
+  height: 249px;
+  flex-shrink: 0;
+  background: #071629;
+}
+
+.foot-notes {
+  width: 75%;
+  height: 60px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  margin-left: 75px;
+  padding-top: 80px;
+}
+
+.foot-notes div {
+  align-items: left;
+}
+
+footer p {
+  color: #FFF;
+  font-family: thinFont;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  word-spacing: -1px;
+  margin-top: 50px;
 }
